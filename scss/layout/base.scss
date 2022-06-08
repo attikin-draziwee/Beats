@@ -109,6 +109,7 @@ input {
   flex-direction: column;
   justify-content: space-between;
   &-content {
+    position: relative;
     flex: 1;
   }
 }
