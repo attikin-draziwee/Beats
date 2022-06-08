@@ -4,6 +4,7 @@
     url("../fonts/alegreya/alegreya-regular.woff2") format("WOFF2");
   font-weight: normal;
   font-style: normal;
+  font-display: fallback;
 }
 
 @font-face {
@@ -11,10 +12,12 @@
   src: url("../fonts/play/play-regular.woff") format("WOFF"), url("../fonts/play/play-regular.woff2") format("WOFF2");
   font-weight: normal;
   font-style: normal;
+  font-display: fallback;
 }
 @font-face {
   font-family: Play;
   src: url("../fonts/play/play-bold.woff") format("WOFF"), url("../fonts/play/play-bold.woff2") format("WOFF2");
   font-weight: bold;
   font-style: normal;
+  font-display: fallback;
 }
