@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: Alegreya, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.42em;
+  color: $text;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialised;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Play;
+  font-weight: bold;
+  color: $header-color;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+address {
+  font-style: normal;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+.heading-1 {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Play;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 1.1em;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 940px;
+  width: 100%;
+}
+
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &-content {
+    flex: 1;
+  }
+}
+
+.logo {
+  &__link {
+    display: block;
+    height: 40px;
+  }
+  &__pic {
+  }
+}
+
+.menu {
+  flex: 1;
+  &__list {
+    justify-content: space-evenly;
+  }
+  &__item {
+    font-size: 18px;
+    line-height: 1.1em;
+    color: $header-color;
+    transition: 0.3s ease-in;
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+.contact {
+  flex: 0.22;
+  text-align: right;
+  margin-right: 25px;
+  &:hover {
+    text-decoration: underline;
+  }
+  &__phone {
+    position: relative;
+    font-size: 18px;
+    line-height: 1em;
+    font-family: Play;
+    color: $header-color;
+    &::before {
+      position: absolute;
+      content: url("../icons/phone.svg");
+      transform: translateX(-100%) translateY(15%);
+      left: -6px;
+    }
+  }
+}
+
+.button {
+  cursor: pointer;
+  display: inline-block;
+  font-family: Play;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.13em;
+  text-transform: uppercase;
+  color: white;
+  padding: 1.125em 2.56em;
+  border-radius: 6.25em;
+  background-color: $accent-color;
+  transition: 0.3s ease-out;
+  &:hover {
+    background-color: #ca1b36;
+  }
+}
