@@ -26,12 +26,12 @@
   }
   &__container {
     position: relative;
-    padding: 103px 0 89px 0;
+    padding: 103px $containerPaddings 89px $containerPaddings;
     min-height: 652px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
   &__heading {
@@ -44,7 +44,7 @@
     font-family: Play;
     line-height: 1.2em;
     text-align: center;
-    width: 55%;
+    width: 56%;
     margin-bottom: 62px;
   }
   &__list {
@@ -57,11 +57,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(27%);
+    width: calc(28%);
     &::after {
       position: absolute;
       content: url("../icons/features/feat-divider.svg");
-      top: 20%;
+      top: 60px;
       right: -30%;
     }
     &:last-of-type::after {
@@ -75,17 +75,18 @@
     padding: 30px;
     background-color: #f2f5f4;
     border-radius: 50%;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
   &__title {
     font-family: Play;
     font-size: 24px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 7px;
+    margin-bottom: 12px;
   }
   &__desc {
     font-family: Play;
+    line-height: 1.125em;
     text-align: center;
   }
 }

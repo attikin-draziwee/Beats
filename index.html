@@ -11,25 +11,14 @@
   <body>
     <div class="wrapper">
       <div class="wrapper-content">
-        <div class="paginator">
-          <ul class="paginator-list">
-            <li class="paginator-item paginator-item--active"></li>
-            <li class="paginator-item"></li>
-            <li class="paginator-item"></li>
-            <li class="paginator-item"></li>
-            <li class="paginator-item"></li>
-            <li class="paginator-item"></li>
-            <li class="paginator-item"></li>
-            <li class="paginator-item"></li>
-            <li class="paginator-item"></li>
-          </ul>
-        </div>
-
         <header class="header">
           <div class="container header__container">
             <div class="logo">
               <a href="#" class="logo__link"
-                ><img src="./icons/logo.svg" alt="" class="logo__pic"
+                ><img
+                  src="./icons/logo.svg"
+                  alt="Логотип Beats"
+                  class="logo__pic"
               /></a>
             </div>
             <nav class="menu">
@@ -58,9 +47,14 @@
               </ul>
             </nav>
             <address class="contact">
-              <a href="tel:88009039090" class="contact__phone"
-                >8 800 903 90 90</a
-              >
+              <a href="tel:88009039090" class="contact__phone">
+                <img
+                  src="./icons/phone.svg"
+                  alt=""
+                  class="contact__phone-icon"
+                />
+                <span class="contact__phone-text">8 800 903 90 90</span>
+              </a>
             </address>
           </div>
         </header>
@@ -68,54 +62,45 @@
         <main class="page-content">
           <section class="hero">
             <div class="container hero__container">
-              <div class="hero__content">
-                <div class="hero__offer">
-                  <h1 class="heading-1 hero__heading">
-                    Беспроводные наушники Beats Solo 3
-                  </h1>
-                  <div class="hero__desc">
-                    <p>
-                      Встречайте новую версию наушников <br />
-                      из линейки Powerbeats.
-                    </p>
-                  </div>
-                  <a href="#" class="button hero__button">Заказать</a>
-                  <div class="advantage">
-                    <ul class="advantage__list">
-                      <li class="advantage__item">
-                        <img
-                          src="./icons/advantage/advantage-icon-1.svg"
-                          alt=""
-                          class="advantage__pic"
-                        />
-                        <div class="advantage__desc">Безупречный звук</div>
-                      </li>
-                      <li class="advantage__item">
-                        <img
-                          src="./icons/advantage/advantage-icon-2.svg"
-                          alt=""
-                          class="advantage__pic"
-                        />
-                        <div class="advantage__desc">До 40 часов работы</div>
-                      </li>
-                      <li class="advantage__item">
-                        <img
-                          src="./icons/advantage/advantage-icon-3.svg"
-                          alt=""
-                          class="advantage__pic"
-                        />
-                        <div class="advantage__desc">Технология Fast Fuel</div>
-                      </li>
-                    </ul>
-                  </div>
+              <div class="hero__offer">
+                <h1 class="heading-1 hero__heading">
+                  Беспроводные наушники Beats Solo 3
+                </h1>
+                <div class="hero__desc">
+                  <p>
+                    Встречайте новую версию наушников <br />
+                    из линейки Powerbeats.
+                  </p>
                 </div>
-                <div class="hero__carousel">
-                  <img
-                    src="./img/headphones/beats-solo-3.webp"
-                    alt="Изображение Beats Solo 3"
-                    class="hero__carousel-img"
-                  />
-                </div>
+                <a href="#" class="button hero__button">Заказать</a>
+              </div>
+              <div class="advantage">
+                <ul class="advantage__list">
+                  <li class="advantage__item">
+                    <img
+                      src="./icons/advantage/advantage-icon-1.svg"
+                      alt=""
+                      class="advantage__pic"
+                    />
+                    <div class="advantage__desc">Безупречный звук</div>
+                  </li>
+                  <li class="advantage__item">
+                    <img
+                      src="./icons/advantage/advantage-icon-2.svg"
+                      alt=""
+                      class="advantage__pic"
+                    />
+                    <div class="advantage__desc">До 40 часов работы</div>
+                  </li>
+                  <li class="advantage__item">
+                    <img
+                      src="./icons/advantage/advantage-icon-3.svg"
+                      alt=""
+                      class="advantage__pic"
+                    />
+                    <div class="advantage__desc">Технология Fast Fuel</div>
+                  </li>
+                </ul>
               </div>
             </div>
           </section>
@@ -205,28 +190,36 @@
                   </div>
                 </li>
               </ul>
-              <div class="review-thumb">
-                <ul class="review-thumb__list">
-                  <li class="review-thumb__item review-thumb__item--active">
-                    <img
-                      src="./img/reviews/review-1.webp"
-                      alt=""
-                      class="review-thumb__pic"
-                    />
+              <div class="review-switcher">
+                <ul class="review-switcher__list">
+                  <li
+                    class="review-switcher__item review-switcher__item--active"
+                  >
+                    <a href="#" class="review-switcher__link">
+                      <img
+                        src="./img/reviews/review-1.webp"
+                        alt="Билли Айлиш фото"
+                        class="review-switcher__pic"
+                      />
+                    </a>
                   </li>
-                  <li class="review-thumb__item">
-                    <img
-                      src="./img/reviews/review-2.webp"
-                      alt=""
-                      class="review-thumb__pic"
-                    />
+                  <li class="review-switcher__item">
+                    <a href="#" class="review-switcher__link">
+                      <img
+                        src="./img/reviews/review-2.webp"
+                        alt="Вадим Грачев фото"
+                        class="review-switcher__pic"
+                      />
+                    </a>
                   </li>
-                  <li class="review-thumb__item">
-                    <img
-                      src="./img/reviews/review-3.webp"
-                      alt=""
-                      class="review-thumb__pic"
-                    />
+                  <li class="review-switcher__item">
+                    <a href="#" class="review-switcher__link">
+                      <img
+                        src="./img/reviews/review-3.webp"
+                        alt="Мария Орлова фото"
+                        class="review-switcher__pic"
+                      />
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -420,6 +413,19 @@
         </main>
       </div>
       <footer class="footer"></footer>
+      <div class="paginator">
+        <ul class="paginator-list">
+          <li class="paginator-item paginator-item--active"></li>
+          <li class="paginator-item"></li>
+          <li class="paginator-item"></li>
+          <li class="paginator-item"></li>
+          <li class="paginator-item"></li>
+          <li class="paginator-item"></li>
+          <li class="paginator-item"></li>
+          <li class="paginator-item"></li>
+          <li class="paginator-item"></li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

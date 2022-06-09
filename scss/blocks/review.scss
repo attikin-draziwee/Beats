@@ -29,6 +29,7 @@
     margin-bottom: 15px;
   }
   &__item {
+    overflow: hidden;
     position: relative;
     width: 100%;
     min-height: 348px;
@@ -86,13 +87,12 @@
     font-size: 18px;
     font-weight: bold;
   }
-  &-thumb {
+  &-switcher {
     &__list {
       display: flex;
       justify-content: center;
     }
     &__item {
-      cursor: pointer;
       margin-right: 6px;
       width: 74px;
       height: 74px;

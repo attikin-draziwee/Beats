@@ -13,13 +13,16 @@
     }
   }
   &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
-    padding: 68px 0 85px 0;
+    padding: 68px $containerPaddings 85px $containerPaddings;
     min-height: 652px;
   }
   &__heading {
     color: inherit;
-    margin-bottom: 61px;
+    margin-bottom: 49px;
   }
   &__form {
     display: flex;
@@ -36,9 +39,9 @@
     flex-basis: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     &--txtarea {
-      margin-bottom: 36px;
+      margin-bottom: 40px;
     }
   }
   &__item {

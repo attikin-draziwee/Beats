@@ -87,7 +87,6 @@ input {
 
 .heading-1 {
   position: relative;
-  z-index: 5;
   text-align: center;
   text-transform: uppercase;
   font-family: Play;
@@ -98,7 +97,9 @@ input {
 
 .container {
   margin: 0 auto;
-  max-width: 940px;
+  max-width: $containerWidth;
+  height: 100vh;
+  padding: 0 $containerPaddings 0 $containerPaddings;
   width: 100%;
 }
 
@@ -142,21 +143,22 @@ input {
 .contact {
   flex: 0.22;
   text-align: right;
-  margin-right: 25px;
   &:hover {
     text-decoration: underline;
   }
   &__phone {
     position: relative;
+    display: flex;
+    align-items: center;
     font-size: 18px;
     line-height: 1em;
     font-family: Play;
     color: $header-color;
-    &::before {
-      position: absolute;
-      content: url("../icons/phone.svg");
-      transform: translateX(-100%) translateY(15%);
-      left: -6px;
+    &-icon {
+      margin-right: 6px;
+    }
+    &-text {
+      width: max-content;
     }
   }
 }
