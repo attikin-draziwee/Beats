@@ -54,7 +54,11 @@
 }
 @include adaptive($tab) {
   .features {
+    min-height: 100vh;
+    height: fit-content;
     &__container {
+      height: fit-content;
+      min-height: 100vh;
       padding: pxToRem(20px) pxToRem($containerPaddings);
     }
     &__desc {
@@ -75,7 +79,10 @@
 }
 @include adaptive($mob) {
   .features {
+    height: fit-content;
     &__container {
+      min-height: 100vh;
+      height: 100%;
       padding: 0 pxToRem(8px);
     }
     &__list {
@@ -142,10 +149,6 @@
   }
 }
 @include adaptive($mob) {
-  .features {
-    min-height: 100vh;
-    height: 100%;
-  }
   .feature {
     &__item {
       width: 100%;

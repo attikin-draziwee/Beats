@@ -2,7 +2,13 @@ $headerHeight: pxToRem(64px);
 
 @include adaptive($laptop, $laptop) {
   .header {
-    background-color: #f5f5f5;
+    position: absolute;
+    max-width: $containerWidth;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     height: $headerHeight;
     &__container {
       display: flex;
@@ -16,6 +22,7 @@ $headerHeight: pxToRem(64px);
 @include adaptive($tab) {
   $headerHeight: 91px;
   .header {
+    position: fixed;
     height: $headerHeight;
     &__container {
       padding: pxToRem(25px) pxToRem(22px) pxToRem(36px) pxToRem(26px);

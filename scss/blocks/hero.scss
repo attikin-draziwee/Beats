@@ -7,7 +7,7 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      height: calc(100vh - $headerHeight);
+      height: 100vh;
     }
     &__left {
       min-height: 100%;
@@ -65,7 +65,6 @@
       flex-direction: column-reverse;
       align-items: center;
       justify-content: space-between;
-      height: calc(100vh - $headerHeight);
     }
     &__left {
       width: 100%;
@@ -112,7 +111,6 @@
       flex-direction: column-reverse;
       align-items: center;
       justify-content: flex-end;
-      height: calc(100vh - $headerHeight);
     }
     &__offer {
       width: 100%;
