@@ -1,5 +1,6 @@
 @include adaptive($laptop, $laptop) {
   .features {
+    min-height: 100vh;
     &-decoration {
       &__item {
         &:nth-child(1) {
@@ -26,7 +27,7 @@
     &__container {
       position: relative;
       padding: pxToRem(103px) pxToRem($containerPaddings) pxToRem(89px) pxToRem($containerPaddings);
-      height: 100vh;
+      height: 100%;
       background-color: #fff;
       display: flex;
       flex-direction: column;
@@ -54,7 +55,7 @@
 @include adaptive($tab) {
   .features {
     &__container {
-      padding: 0 pxToRem($containerPaddings);
+      padding: pxToRem(20px) pxToRem($containerPaddings);
     }
     &__desc {
       width: 80%;
@@ -68,7 +69,7 @@
       margin-bottom: pxToRem(11px);
     }
     &__desc {
-      margin-bottom: pxToRem(53px);
+      margin-bottom: pxToRem(52px);
     }
   }
 }
@@ -161,6 +162,7 @@
       align-items: start;
     }
     &__title {
+      text-align: left;
       min-width: auto;
       margin-bottom: pxToRem(6px);
     }

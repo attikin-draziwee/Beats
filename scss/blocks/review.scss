@@ -1,5 +1,6 @@
 @include adaptive($laptop, $laptop) {
   .review {
+    height: 100vh;
     &-decoration {
       &__item {
         &:nth-child(1) {
@@ -14,6 +15,7 @@
       }
     }
     &__container {
+      height: 100%;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -120,7 +122,7 @@
 @include adaptive($tab) {
   .review {
     &__container {
-      padding: 0;
+      padding: pxToRem(188px) 0 pxToRem(180px) 0;
     }
     &__list {
       margin-bottom: pxToRem(32px);
@@ -158,6 +160,9 @@
 }
 @include adaptive($mob) {
   .review {
+    &__container {
+      padding: pxToRem(93px) 0 pxToRem(86px) 0;
+    }
     &__list {
       margin-bottom: pxToRem(44px);
     }
