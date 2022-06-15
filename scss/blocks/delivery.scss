@@ -2,15 +2,13 @@
   background: url("../img/bg-form.webp") center bottom/contain no-repeat, #181818;
   color: #fff;
   &-decoration {
-    &__list {
-    }
     &__item {
       :nth-child(1) {
-        width: 48px;
-        height: 49px;
+        width: pxToRem(48px);
+        height: pxToRem(49px);
         position: absolute;
-        top: -23px;
-        right: 15px;
+        top: pxToRem(-23px);
+        right: pxToRem(15px);
       }
     }
   }
@@ -19,12 +17,12 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
-    padding: 68px $containerPaddings 85px $containerPaddings;
-    min-height: 652px;
+    padding: pxToRem(68px) pxToRem($containerPaddings) pxToRem(85px) pxToRem($containerPaddings);
+    min-height: pxToRem(652px);
   }
   &__heading {
     color: inherit;
-    margin-bottom: 49px;
+    margin-bottom: pxToRem(49px);
   }
   &__form {
     display: flex;
@@ -32,7 +30,7 @@
   }
   &__left {
     flex: 1;
-    margin-right: 26px;
+    margin-right: pxToRem(26px);
   }
   &__right {
     flex: 1;
@@ -41,9 +39,9 @@
     flex-basis: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: pxToRem(10px);
     &--txtarea {
-      margin-bottom: 40px;
+      margin-bottom: pxToRem(40px);
     }
   }
   &__item {
@@ -60,9 +58,9 @@
   &__hint {
     user-select: none;
     font-family: Play;
-    margin-bottom: 6px;
+    margin-bottom: pxToRem(6px);
     &--shadow {
-      text-shadow: 0 4px 0px $accent-color;
+      text-shadow: 0 pxToRem(4px) 0px $accent-color;
     }
     &--radio {
       position: relative;
@@ -72,11 +70,11 @@
         content: "";
         display: inline-block;
         vertical-align: middle;
-        width: 25px;
-        height: 25px;
+        width: pxToRem(25px);
+        height: pxToRem(25px);
         border-radius: 50%;
         background-color: #fff;
-        margin-right: 10px;
+        margin-right: pxToRem(10px);
       }
     }
     &--check {
@@ -86,11 +84,11 @@
         content: "";
         display: inline-block;
         vertical-align: middle;
-        width: 24px;
-        height: 24px;
-        border-radius: 4px;
+        width: pxToRem(24px);
+        height: pxToRem(24px);
+        border-radius: pxToRem(4px);
         background-color: #fff;
-        margin-right: 11px;
+        margin-right: pxToRem(11px);
       }
     }
   }
@@ -101,18 +99,18 @@
     align-items: flex-start;
   }
   &__space {
-    padding-left: 12px;
-    min-height: 58px;
+    padding-left: pxToRem(12px);
+    min-height: pxToRem(58px);
     width: 100%;
-    border-radius: 4px;
+    border-radius: pxToRem(4px);
     transition: 0.3s ease;
     &--area {
       resize: none;
-      padding-top: 12px;
-      max-height: 152px;
+      padding-top: pxToRem(12px);
+      max-height: pxToRem(152px);
     }
     &:focus {
-      outline: 3px solid $accent-color;
+      outline: pxToRem(3px) solid $accent-color;
     }
   }
   &__radio {
@@ -124,10 +122,10 @@
           content: "";
           position: absolute;
           display: inline-block;
-          left: 6px;
-          top: 6px;
-          width: 13px;
-          height: 13px;
+          left: pxToRem(6px);
+          top: pxToRem(6px);
+          width: pxToRem(13px);
+          height: pxToRem(13px);
           border-radius: 50%;
           background-color: $accent-color;
         }
@@ -142,20 +140,20 @@
         content: url("../icons/checked.svg");
         position: absolute;
         display: inline-block;
-        left: 7px;
+        left: pxToRem(7px);
       }
     }
   }
   &__post {
-    margin-top: 44px;
+    margin-top: pxToRem(44px);
   }
   &__button {
-    margin-right: 15px;
+    margin-right: pxToRem(15px);
   }
   &__reset {
     cursor: pointer;
     padding: 0;
-    font-size: 16px;
+    font-size: pxToRem(16px);
     font-family: Play;
     background: none;
     color: white;

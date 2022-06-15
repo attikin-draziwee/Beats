@@ -5,13 +5,13 @@
 html,
 body {
   font-family: Alegreya, sans-serif;
-  font-size: 16px;
+  font-size: $baseFontSize;
   font-weight: normal;
   font-style: normal;
   line-height: 1.42em;
   color: $text;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialised;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -58,26 +58,26 @@ input {
   z-index: 5;
   transform: translateY(-50%);
   top: 50%;
-  right: 44px;
+  right: pxToRem(44px);
   &-list {
     flex-direction: column;
   }
   &-item {
     position: relative;
     cursor: pointer;
-    width: 6px;
-    height: 6px;
+    width: pxToRem(6px);
+    height: pxToRem(6px);
     border-radius: 50%;
     background-color: #7b7b7b;
-    margin-bottom: 15px;
+    margin-bottom: pxToRem(15px);
     &--active {
       background-color: $accent-color;
       &::before {
         position: absolute;
         content: "";
-        width: 16px;
-        height: 16px;
-        border: 1px solid $accent-color;
+        width: pxToRem(16px);
+        height: pxToRem(16px);
+        border: pxToRem(1px) solid $accent-color;
         border-radius: 50%;
         transform: translate(-33%, -33%);
       }
@@ -91,7 +91,7 @@ input {
   text-transform: uppercase;
   font-family: Play;
   font-weight: bold;
-  font-size: 48px;
+  font-size: pxToRem(48px);
   line-height: 1.1em;
 }
 
@@ -99,7 +99,7 @@ input {
   margin: 0 auto;
   max-width: $containerWidth;
   height: 100vh;
-  padding: 0 $containerPaddings 0 $containerPaddings;
+  padding: 0 pxToRem($containerPaddings) 0 pxToRem($containerPaddings);
   width: 100%;
 }
 
@@ -118,11 +118,11 @@ input {
 .logo {
   &__link {
     display: block;
-    height: 40px;
+    height: pxToRem(40px);
   }
   &__icon {
-    width: 40px;
-    height: 40px;
+    width: pxToRem(40px);
+    height: pxToRem(40px);
     fill: $accent-color;
   }
 }
@@ -133,7 +133,7 @@ input {
     justify-content: space-evenly;
   }
   &__item {
-    font-size: 18px;
+    font-size: pxToRem(18px);
     line-height: 1.1em;
     color: $header-color;
     transition: 0.3s ease-in;
@@ -153,15 +153,15 @@ input {
     position: relative;
     display: flex;
     align-items: center;
-    font-size: 18px;
+    font-size: pxToRem(18px);
     line-height: 1em;
     font-family: Play;
     color: $header-color;
     &-icon {
-      width: 14px;
-      height: 14px;
+      width: pxToRem(14px);
+      height: pxToRem(14px);
       fill: #292929;
-      margin-right: 6px;
+      margin-right: pxToRem(6px);
     }
     &-text {
       width: max-content;
@@ -173,7 +173,7 @@ input {
   cursor: pointer;
   display: inline-block;
   font-family: Play;
-  font-size: 16px;
+  font-size: pxToRem(16px);
   font-weight: bold;
   line-height: 1.13em;
   text-transform: uppercase;
@@ -184,5 +184,14 @@ input {
   transition: 0.3s ease-out;
   &:hover {
     background-color: #ca1b36;
+  }
+}
+
+.hamburger {
+  display: none;
+  &__icon {
+    width: pxToRem(27px);
+    height: pxToRem(24px);
+    fill: #0d0e0f;
   }
 }

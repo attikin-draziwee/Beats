@@ -1,4 +1,4 @@
-$headerHeight: 64px;
+$headerHeight: pxToRem(64px);
 
 .header {
   background-color: #f5f5f5;
@@ -7,7 +7,7 @@ $headerHeight: 64px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 24px;
+    padding-top: pxToRem(24px);
     height: min-content;
   }
 }

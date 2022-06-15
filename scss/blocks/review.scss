@@ -1,14 +1,12 @@
 .review {
   &-decoration {
-    &__list {
-    }
     &__item {
       &:nth-child(1) {
         position: absolute;
-        bottom: -17.5px;
+        bottom: pxToRem(-17.5px);
         left: 0;
-        width: 35px;
-        height: 35px;
+        width: pxToRem(35px);
+        height: pxToRem(35px);
         border-radius: 50%;
         background-color: #868686;
       }
@@ -16,43 +14,42 @@
   }
   &__container {
     position: relative;
-    min-height: 648px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   &__heading {
-    margin-bottom: 32px;
+    margin-bottom: pxToRem(32px);
   }
   &__list {
-    margin-bottom: 15px;
+    margin-bottom: pxToRem(15px);
   }
   &__item {
     overflow: hidden;
     position: relative;
     width: 100%;
-    min-height: 348px;
+    min-height: pxToRem(348px);
     background-color: #f8faf9;
-    padding: 42px;
+    padding: pxToRem(42px);
     display: flex;
     &::before {
       position: absolute;
       content: "";
-      top: -60px;
+      top: pxToRem(-60px);
       transform: translateX(-50%);
       left: 50%;
-      width: 83px;
-      height: 83px;
+      width: pxToRem(83px);
+      height: pxToRem(83px);
       border-radius: 50%;
       background-color: #fff;
     }
   }
   &__left {
-    margin-right: 40px;
-    max-width: 253px;
+    margin-right: pxToRem(40px);
+    max-width: pxToRem(253px);
     width: 100%;
-    height: 264px;
+    height: pxToRem(264px);
     flex: 1;
   }
   &__pic {
@@ -73,18 +70,18 @@
   &__title {
     font-family: Play;
     font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 27px;
+    font-size: pxToRem(24px);
+    margin-bottom: pxToRem(27px);
   }
   &__desc {
-    margin-bottom: 38px;
+    margin-bottom: pxToRem(38px);
     p {
       font-family: Play;
     }
   }
   &__author {
     font-family: Play;
-    font-size: 18px;
+    font-size: pxToRem(18px);
     font-weight: bold;
   }
   &-switcher {
@@ -93,18 +90,18 @@
       justify-content: center;
     }
     &__item {
-      margin-right: 6px;
-      width: 74px;
-      height: 74px;
+      margin-right: pxToRem(6px);
+      width: pxToRem(74px);
+      height: pxToRem(74px);
       border-radius: 50%;
-      border: 4px solid transparent;
+      border: pxToRem(4px) solid transparent;
       transition: 0.3s ease;
       &:last-of-type {
         margin-right: 0;
       }
       &--active,
       &:hover {
-        border: 4px solid $accent-color;
+        border: pxToRem(4px) solid $accent-color;
       }
     }
     &__pic {
