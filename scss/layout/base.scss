@@ -2,16 +2,18 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  font-family: Alegreya, sans-serif;
-  font-size: $baseFontSize;
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1.42em;
-  color: $text;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+@include adaptive($laptop, $laptop) {
+  html,
+  body {
+    font-family: Alegreya, sans-serif;
+    font-size: $baseFontSize;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.42em;
+    color: $text;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
 }
 
 h1,
@@ -53,46 +55,60 @@ input {
   outline: none;
 }
 
-.paginator {
-  position: fixed;
-  z-index: 5;
-  transform: translateY(-50%);
-  top: 50%;
-  right: pxToRem(44px);
-  &-list {
-    flex-direction: column;
-  }
-  &-item {
-    position: relative;
-    cursor: pointer;
-    width: pxToRem(6px);
-    height: pxToRem(6px);
-    border-radius: 50%;
-    background-color: #7b7b7b;
-    margin-bottom: pxToRem(15px);
-    &--active {
-      background-color: $accent-color;
-      &::before {
-        position: absolute;
-        content: "";
-        width: pxToRem(16px);
-        height: pxToRem(16px);
-        border: pxToRem(1px) solid $accent-color;
-        border-radius: 50%;
-        transform: translate(-33%, -33%);
+@include adaptive($laptop, $laptop) {
+  .paginator {
+    position: fixed;
+    z-index: 5;
+    transform: translateY(-50%);
+    top: 50%;
+    right: pxToRem(44px);
+    &-list {
+      flex-direction: column;
+    }
+    &-item {
+      position: relative;
+      cursor: pointer;
+      width: pxToRem(6px);
+      height: pxToRem(6px);
+      border-radius: 50%;
+      background-color: #7b7b7b;
+      margin-bottom: pxToRem(15px);
+      &--active {
+        background-color: $accent-color;
+        &::before {
+          position: absolute;
+          content: "";
+          width: pxToRem(16px);
+          height: pxToRem(16px);
+          border: pxToRem(1px) solid $accent-color;
+          border-radius: 50%;
+          transform: translate(-33%, -33%);
+        }
       }
     }
   }
 }
+@include adaptive($tab) {
+  .paginator {
+    display: none;
+  }
+}
 
-.heading-1 {
-  position: relative;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: Play;
-  font-weight: bold;
-  font-size: pxToRem(48px);
-  line-height: 1.1em;
+@include adaptive($laptop, $laptop) {
+  .heading-1 {
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Play;
+    font-weight: bold;
+    font-size: pxToRem(48px);
+    line-height: 1.1em;
+  }
+}
+@include adaptive($mob) {
+  .heading-1 {
+    font-size: pxToRem(32px);
+  }
 }
 
 .container {
@@ -118,80 +134,108 @@ input {
 .logo {
   &__link {
     display: block;
-    height: pxToRem(40px);
+    height: 40px;
   }
   &__icon {
-    width: pxToRem(40px);
-    height: pxToRem(40px);
+    width: 40px;
+    height: 40px;
     fill: $accent-color;
   }
 }
 
-.menu {
-  flex: 1;
-  &__list {
-    justify-content: space-evenly;
+@include adaptive($laptop, $laptop) {
+  .menu {
+    flex: 1;
+    &__list {
+      justify-content: space-evenly;
+    }
+    &__item {
+      font-size: pxToRem(18px);
+      line-height: 1.1em;
+      color: $header-color;
+      transition: 0.3s ease-in;
+      &:hover {
+        color: $accent-color;
+      }
+    }
   }
-  &__item {
-    font-size: pxToRem(18px);
-    line-height: 1.1em;
-    color: $header-color;
-    transition: 0.3s ease-in;
+}
+@include adaptive($tab) {
+  .menu {
+    display: none;
+  }
+}
+
+@include adaptive($laptop, $laptop) {
+  .contact {
+    flex: 0.22;
+    text-align: right;
     &:hover {
-      color: $accent-color;
+      text-decoration: underline;
+    }
+    &__phone {
+      position: relative;
+      display: flex;
+      align-items: center;
+      font-size: pxToRem(18px);
+      line-height: 1em;
+      font-family: Play;
+      color: $header-color;
+      &-icon {
+        width: pxToRem(14px);
+        height: pxToRem(14px);
+        fill: #292929;
+        margin-right: pxToRem(6px);
+      }
+      &-text {
+        width: max-content;
+      }
     }
   }
 }
-
-.contact {
-  flex: 0.22;
-  text-align: right;
-  &:hover {
-    text-decoration: underline;
+@include adaptive($tab) {
+  .contact {
+    display: none;
   }
-  &__phone {
-    position: relative;
-    display: flex;
-    align-items: center;
-    font-size: pxToRem(18px);
-    line-height: 1em;
+}
+
+@include adaptive($laptop, $laptop) {
+  .button {
+    cursor: pointer;
+    display: inline-block;
     font-family: Play;
-    color: $header-color;
-    &-icon {
-      width: pxToRem(14px);
-      height: pxToRem(14px);
-      fill: #292929;
-      margin-right: pxToRem(6px);
-    }
-    &-text {
-      width: max-content;
+    font-size: pxToRem(16px);
+    font-weight: bold;
+    line-height: 1.13em;
+    text-transform: uppercase;
+    color: white;
+    padding: 1.125em 2.56em;
+    border-radius: 6.25em;
+    background-color: $accent-color;
+    transition: 0.3s ease-out;
+    &:hover {
+      background-color: #ca1b36;
     }
   }
 }
-
-.button {
-  cursor: pointer;
-  display: inline-block;
-  font-family: Play;
-  font-size: pxToRem(16px);
-  font-weight: bold;
-  line-height: 1.13em;
-  text-transform: uppercase;
-  color: white;
-  padding: 1.125em 2.56em;
-  border-radius: 6.25em;
-  background-color: $accent-color;
-  transition: 0.3s ease-out;
-  &:hover {
-    background-color: #ca1b36;
+@include adaptive($mob) {
+  .button {
+    font-size: pxToRem(19px);
   }
 }
 
-.hamburger {
-  display: none;
-  &__icon {
-    width: pxToRem(27px);
-    height: pxToRem(24px);
-    fill: #0d0e0f;
+@include adaptive($laptop, $laptop) {
+  .hamburger {
+    display: none;
+    &__icon {
+      width: 27px;
+      height: 24px;
+      fill: #0d0e0f;
+    }
+  }
+}
+@include adaptive($tab) {
+  .hamburger {
+    display: block;
   }
 }

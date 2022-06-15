@@ -1,13 +1,32 @@
 $headerHeight: pxToRem(64px);
 
-.header {
-  background-color: #f5f5f5;
-  height: $headerHeight;
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: pxToRem(24px);
-    height: min-content;
+@include adaptive($laptop, $laptop) {
+  .header {
+    background-color: #f5f5f5;
+    height: $headerHeight;
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: pxToRem(24px);
+      height: min-content;
+    }
+  }
+}
+@include adaptive($tab) {
+  $headerHeight: 91px;
+  .header {
+    height: $headerHeight;
+    &__container {
+      padding: pxToRem(25px) pxToRem(22px) pxToRem(36px) pxToRem(26px);
+    }
+  }
+}
+@include adaptive($mob) {
+  .header {
+    height: $headerHeight;
+    &__container {
+      padding: pxToRem(25px) pxToRem(10px) pxToRem(25px) pxToRem(10px);
+    }
   }
 }

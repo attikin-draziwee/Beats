@@ -1,5 +1,11 @@
-@mixin adaptive($max-width) {
-  @media screen and (max-width: $min-width) {
-    @content;
+@mixin adaptive($max-width, $min-width: "") {
+  @if $min-width == "" {
+    @media screen and (max-width: $max-width) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: $max-width), (min-width: $min-width) {
+      @content;
+    }
   }
 }
