@@ -120,7 +120,10 @@ input {
     display: block;
     height: 40px;
   }
-  &__pic {
+  &__icon {
+    width: 40px;
+    height: 40px;
+    fill: $accent-color;
   }
 }
 
@@ -155,6 +158,9 @@ input {
     font-family: Play;
     color: $header-color;
     &-icon {
+      width: 14px;
+      height: 14px;
+      fill: #292929;
       margin-right: 6px;
     }
     &-text {
