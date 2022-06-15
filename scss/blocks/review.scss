@@ -122,7 +122,7 @@
 @include adaptive($tab) {
   .review {
     &__container {
-      padding: pxToRem(188px) 0 pxToRem(180px) 0;
+      padding: pxToRem(188px) pxToRem(22px);
     }
     &__list {
       margin-bottom: pxToRem(32px);
@@ -161,7 +161,7 @@
 @include adaptive($mob) {
   .review {
     &__container {
-      padding: pxToRem(93px) 0 pxToRem(86px) 0;
+      padding: pxToRem(93px) pxToRem(10px) pxToRem(86px) pxToRem(10px);
     }
     &__list {
       margin-bottom: pxToRem(44px);
