@@ -195,6 +195,7 @@
 
 @include adaptive($mob) {
   .delivery {
+    min-height: 100vh;
     .container {
       padding: pxToRem($containerPaddings) pxToRem(10px);
     }

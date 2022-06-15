@@ -1,6 +1,6 @@
 @include adaptive($laptop, $laptop) {
   .review {
-    height: 100vh;
+    min-height: 100vh;
     &-decoration {
       &__item {
         &:nth-child(1) {

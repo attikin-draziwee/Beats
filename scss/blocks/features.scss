@@ -83,7 +83,7 @@
     &__container {
       min-height: 100vh;
       height: 100%;
-      padding: 0 pxToRem(8px);
+      padding: 0pxToRem (20px) pxToRem(8px);
     }
     &__list {
       flex-direction: row;
@@ -156,6 +156,9 @@
       flex-direction: row;
       justify-content: space-between;
       margin-bottom: pxToRem(31px);
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
     &__thumb {
       max-width: 68px;
