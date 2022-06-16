@@ -15,7 +15,8 @@
       }
     }
     &__container {
-      height: 100%;
+      min-height: 100vh;
+      height: fit-content;
       position: relative;
       display: flex;
       flex-direction: column;
