@@ -6,8 +6,8 @@
         &:nth-child(1) {
           position: absolute;
           z-index: 2;
-          width: pxToRem(46px);
-          height: pxToRem(10px);
+          width: 46px;
+          height: 10px;
           background-color: #c4c4c4;
           right: 0;
           top: pxToRem(-8px);
@@ -26,7 +26,7 @@
     }
     &__container {
       position: relative;
-      padding: pxToRem(103px) pxToRem($containerPaddings) pxToRem(89px) pxToRem($containerPaddings);
+      padding: pxToRem(103px) 0 pxToRem(89px) 0;
       height: 100%;
       background-color: #fff;
       display: flex;
@@ -56,10 +56,20 @@
   .features {
     min-height: 100vh;
     height: fit-content;
+    &-decoration {
+      &__item {
+        &:nth-of-type(1) {
+          right: pxToRem(78.9px);
+        }
+        &:nth-of-type(2) {
+          left: 1rem;
+        }
+      }
+    }
     &__container {
       height: fit-content;
       min-height: 100vh;
-      padding: pxToRem(20px) pxToRem($containerPaddings);
+      padding: pxToRem(20px) 0;
     }
     &__desc {
       width: 80%;
@@ -80,10 +90,17 @@
 @include adaptive($mob) {
   .features {
     height: fit-content;
+    &-decoration {
+      &__item {
+        &:nth-of-type(1) {
+          right: pxToRem(51.9px);
+        }
+      }
+    }
     &__container {
       min-height: 100vh;
       height: 100%;
-      padding: 0pxToRem (20px) pxToRem(8px);
+      padding: pxToRem(20px) 0;
     }
     &__list {
       flex-direction: row;

@@ -25,7 +25,7 @@ $headerHeight: pxToRem(64px);
     position: fixed;
     height: $headerHeight;
     &__container {
-      padding: pxToRem(25px) pxToRem(22px) pxToRem(36px) pxToRem(26px);
+      padding: pxToRem(25px) 0 pxToRem(36px) 0;
     }
   }
 }
@@ -33,7 +33,7 @@ $headerHeight: pxToRem(64px);
   .header {
     height: $headerHeight;
     &__container {
-      padding: pxToRem(25px) pxToRem(10px) pxToRem(25px) pxToRem(10px);
+      padding: pxToRem(25px) 0 pxToRem(25px) 0;
     }
   }
 }

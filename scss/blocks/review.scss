@@ -121,8 +121,15 @@
 
 @include adaptive($tab) {
   .review {
+    &-decoration {
+      &__item {
+        &:nth-child(1) {
+          left: pxToRem(68px);
+        }
+      }
+    }
     &__container {
-      padding: pxToRem(188px) pxToRem(22px);
+      padding: pxToRem(188px) 0;
     }
     &__list {
       margin-bottom: pxToRem(32px);
@@ -160,8 +167,15 @@
 }
 @include adaptive($mob) {
   .review {
+    &-decoration {
+      &__item {
+        &:nth-child(1) {
+          left: pxToRem(51px);
+        }
+      }
+    }
     &__container {
-      padding: pxToRem(93px) pxToRem(10px) pxToRem(86px) pxToRem(10px);
+      padding: pxToRem(93px) 0 pxToRem(86px) 0;
     }
     &__list {
       margin-bottom: pxToRem(44px);

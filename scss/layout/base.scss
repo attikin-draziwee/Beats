@@ -111,12 +111,26 @@ input {
   }
 }
 
-.container {
-  margin: 0 auto;
-  max-width: $containerWidth;
-  height: 100vh;
-  padding: 0 pxToRem($containerPaddings) 0 pxToRem($containerPaddings);
-  width: 100%;
+@include adaptive($laptop, $laptop) {
+  .container {
+    margin: 0 auto;
+    max-width: $containerWidth;
+    width: calc(100% - $containerPaddings);
+    height: 100vh;
+    width: 100%;
+  }
+}
+@include adaptive($tab) {
+  $containerPaddings: 22px;
+  .container {
+    width: calc(100% - $containerPaddings);
+  }
+}
+@include adaptive($mob) {
+  $containerPaddings: 10px;
+  .container {
+    width: calc(100% - $containerPaddings);
+  }
 }
 
 .wrapper {
