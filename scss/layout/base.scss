@@ -247,8 +247,9 @@ input {
     }
     &__icon {
       transition: 0.3s ease-out;
+      fill: #b3b3b3;
       &:hover {
-        fill: #b3b3b3;
+        fill: black;
       }
     }
   }
