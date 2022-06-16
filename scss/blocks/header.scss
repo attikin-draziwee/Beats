@@ -27,6 +27,9 @@ $headerHeight: pxToRem(64px);
     &__container {
       padding: pxToRem(25px) 0 pxToRem(36px) 0;
     }
+    &__contact {
+      display: none;
+    }
   }
 }
 @include adaptive($mob) {

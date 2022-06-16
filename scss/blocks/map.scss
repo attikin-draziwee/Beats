@@ -1,0 +1,8 @@
+@include adaptive($laptop, $laptop) {
+  .map {
+    height: 100vh;
+    &__pic {
+      object-fit: contain;
+    }
+  }
+}

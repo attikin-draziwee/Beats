@@ -1,0 +1,35 @@
+@include adaptive($laptop, $laptop) {
+  .footer {
+    position: absolute;
+    height: max-content;
+    width: 100%;
+    z-index: 10;
+    bottom: 0;
+    background-color: #fff;
+    &__container {
+      max-height: pxToRem(87px);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+@include adaptive($tab) {
+  .footer {
+    &__container {
+      padding: 0 pxToRem(36px) 0 pxToRem(30px);
+    }
+  }
+}
+@include adaptive($mob) {
+  .footer {
+    &__container {
+      max-height: pxToRem(151px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 0;
+    }
+  }
+}

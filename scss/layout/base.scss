@@ -5,6 +5,7 @@
 @include adaptive($laptop, $laptop) {
   html,
   body {
+    position: relative;
     font-family: Alegreya, sans-serif;
     font-size: $baseFontSize;
     font-weight: normal;
@@ -48,6 +49,7 @@ a {
 
 address {
   font-style: normal;
+  text-decoration: none;
 }
 
 input {
@@ -183,11 +185,19 @@ input {
 @include adaptive($laptop, $laptop) {
   .contact {
     flex: 0.22;
-    text-align: right;
-    &:hover {
-      text-decoration: underline;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    &__meta {
+      font-family: Play;
+      font-size: pxToRem(18px);
+      line-height: 1.3em;
+      color: #292929;
+      white-space: nowrap;
+      margin-bottom: pxToRem(3px);
     }
     &__phone {
+      text-align: right;
       position: relative;
       display: flex;
       align-items: center;
@@ -195,7 +205,9 @@ input {
       line-height: 1em;
       font-family: Play;
       color: $header-color;
+      transition: 0.3s ease-out;
       &-icon {
+        transition: 0.3s ease-out;
         width: pxToRem(14px);
         height: pxToRem(14px);
         fill: #292929;
@@ -204,12 +216,46 @@ input {
       &-text {
         width: max-content;
       }
+      &:hover {
+        color: $accent-color;
+        .contact__phone-icon {
+          fill: $accent-color;
+        }
+      }
     }
   }
 }
-@include adaptive($tab) {
+@include adaptive($mob) {
   .contact {
-    display: none;
+    align-items: center;
+    &__meta {
+      margin-bottom: pxToRem(12px);
+    }
+  }
+}
+
+@include adaptive($laptop, $laptop) {
+  .social {
+    width: pxToRem(150px);
+    &__list {
+      width: 100%;
+      justify-content: space-between;
+    }
+    &__item {
+    }
+    &__link {
+    }
+    &__icon {
+      transition: 0.3s ease-out;
+      &:hover {
+        fill: #b3b3b3;
+      }
+    }
+  }
+}
+@include adaptive($mob) {
+  .social {
+    width: pxToRem(138px);
   }
 }
 
