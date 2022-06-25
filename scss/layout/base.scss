@@ -57,6 +57,14 @@ input {
   outline: none;
 }
 
+table,
+tbody,
+tr,
+td {
+  padding: 0;
+  margin: 0;
+}
+
 @include adaptive($laptop, $laptop) {
   .paginator {
     position: fixed;
@@ -162,13 +170,15 @@ input {
 @include adaptive($laptop, $laptop) {
   .menu {
     flex: 1;
+    color: $header-color;
+    font-size: pxToRem(18px);
     &__list {
       justify-content: space-evenly;
     }
     &__item {
-      font-size: pxToRem(18px);
-      line-height: 1.1em;
-      color: $header-color;
+      font-size: inherit;
+      line-height: inherit;
+      color: inherit;
       transition: 0.3s ease-in;
       &:hover {
         color: $accent-color;
@@ -177,7 +187,7 @@ input {
   }
 }
 @include adaptive($tab) {
-  .menu {
+  .header__menu {
     display: none;
   }
 }
@@ -267,7 +277,7 @@ input {
     font-family: Play;
     font-size: pxToRem(16px);
     font-weight: bold;
-    line-height: 1.13em;
+    // line-height: 1.13em;
     text-transform: uppercase;
     color: white;
     padding: 1.125em 2.56em;
@@ -285,6 +295,14 @@ input {
   }
 }
 
+.close {
+  fill: white;
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
 @include adaptive($laptop, $laptop) {
   .hamburger {
     display: none;
@@ -298,5 +316,40 @@ input {
 @include adaptive($tab) {
   .hamburger {
     display: block;
+  }
+}
+
+@include adaptive($laptop, $laptop) {
+  .slider {
+    &__list {
+      align-items: space-evenly;
+      justify-content: space-evenly;
+    }
+    &__item {
+      width: 100%;
+    }
+    &__arrow {
+      position: absolute;
+      z-index: 5;
+      top: 50%;
+      transform: translateY(-50%);
+      &-left,
+      &-right {
+        &-icon {
+          fill: none;
+          stroke: black;
+          stroke-width: 2;
+          stroke-linecap: round;
+          width: 13px;
+          height: 27px;
+        }
+      }
+      &-left {
+        left: 0;
+      }
+      &-right {
+        right: 0;
+      }
+    }
   }
 }
