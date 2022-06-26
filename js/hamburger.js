@@ -11,10 +11,12 @@ hamburger.addEventListener('click', e => {
   const close = overlay.querySelector('.overlay__close');
 
   close.addEventListener('click', e => {
+    e.preventDefault();
     document.body.removeChild(overlay);
   });
 
   overlay.addEventListener('click', e => {
+    e.preventDefault();
     if (e.target == overlay || e.classList.contains('menu__link'))
       close.click();
   });
