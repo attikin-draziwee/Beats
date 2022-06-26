@@ -4,6 +4,10 @@ const teamList = document.querySelector('.team__list');
 const tabMedia = window.matchMedia('(max-width: 768px)');
 const mobMedia = window.matchMedia('(max-width: 480px)');
 
+if (tabMedia.matches) {
+  const firstTeamItem = document.querySelector('.team__show');
+  firstTeamItem.classList.add('team__show--tab-active');
+}
 
 teamList.addEventListener('click', e => {
   e.preventDefault();

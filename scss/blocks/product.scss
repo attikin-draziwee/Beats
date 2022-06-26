@@ -81,6 +81,7 @@
         display: none;
         right: 0;
         top: 0;
+        backdrop-filter: blur(7px);
         position: absolute;
         width: pxToRem(273px);
         transform: translateX(100%);
