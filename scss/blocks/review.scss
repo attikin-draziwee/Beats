@@ -28,11 +28,16 @@
     }
     &__list {
       margin-bottom: pxToRem(15px);
+      overflow-x: clip;
+      width: 100%;
     }
     &__item {
       overflow: hidden;
       position: relative;
+      left: 0;
+      transition: 0.3s ease-in;
       width: 100%;
+      flex-shrink: 0;
       min-height: pxToRem(348px);
       background-color: #f8faf9;
       padding: pxToRem(42px);
