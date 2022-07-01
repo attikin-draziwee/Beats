@@ -17,7 +17,7 @@ hamburger.addEventListener('click', e => {
 
   overlay.addEventListener('click', e => {
     e.preventDefault();
-    if (e.target == overlay || e.classList.contains('menu__link'))
+    if (e.target == overlay || e.target.classList.contains('menu__link'))
       close.click();
   });
 

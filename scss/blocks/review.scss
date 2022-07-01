@@ -179,6 +179,9 @@
         }
       }
     }
+    &__title {
+      text-align: center;
+    }
     &__container {
       padding: pxToRem(93px) 0 pxToRem(86px) 0;
     }
