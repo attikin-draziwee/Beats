@@ -322,10 +322,11 @@ td {
 @include adaptive($laptop, $laptop) {
   .slider {
     &__list {
-      align-items: space-evenly;
-      justify-content: space-evenly;
+      overflow-x: clip;
     }
     &__item {
+      position: relative;
+      flex-shrink: 0;
       width: 100%;
     }
     &__arrow {

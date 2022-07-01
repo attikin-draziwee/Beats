@@ -66,7 +66,7 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-evenly;
       min-height: -webkit-fit-content;
       min-height: -moz-fit-content;
       min-height: fit-content;
@@ -75,10 +75,8 @@
       font-family: Play;
       font-weight: bold;
       font-size: pxToRem(24px);
-      margin-bottom: pxToRem(27px);
     }
     &__desc {
-      margin-bottom: pxToRem(38px);
       p {
         font-family: Play;
       }
@@ -95,6 +93,7 @@
         justify-content: center;
       }
       &__item {
+        user-select: none;
         margin-right: pxToRem(6px);
         width: pxToRem(74px);
         height: pxToRem(74px);
