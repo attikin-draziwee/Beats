@@ -10,7 +10,7 @@ switchList.addEventListener('click', e => {
       clearClass('review-switcher__item--active');
       i.classList.add('review-switcher__item--active');
       for (let j of reviewList.children) {
-        j.style.left = -(j.offsetWidth * i.getAttribute('index')) + 'px';
+        j.style.left = -(100 * i.getAttribute('index')) + '%';
       }
     }
 });
