@@ -1,16 +1,10 @@
 'use strict';
-const reviewList = document.querySelector('.review__list');
-const switchList = document.querySelector('.review-switcher__list');
 
-switchList.addEventListener('click', e => {
+const switcher = $('.review-switcher__item');
+
+switcher.on('click', function (e) {
   e.preventDefault();
-
-  for (let i of switchList.children)
-    if (e.target.parentNode.parentNode == i) {
-      clearClass('review-switcher__item--active');
-      i.classList.add('review-switcher__item--active');
-      for (let j of reviewList.children) {
-        j.style.left = -(100 * i.getAttribute('index')) + '%';
-      }
-    }
+  clearClass('review-switcher__item--active');
+  $(this).addClass('review-switcher__item--active');
+  $('.review__item').css('left', `${-(100 * $(this).index())}%`);
 });
