@@ -1,0 +1,113 @@
+@include adaptive($laptop, $laptop) {
+  .work {
+    background-color: #f8faf9;
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .player {
+    position: relative;
+    max-width: 662px;
+    width: 100%;
+    &__wrapper {
+      height: pxToRem(392px);
+    }
+    &__splash {
+      position: absolute;
+      top: 0;
+      background: url("../img/preview.webp") center center/cover no-repeat;
+    }
+    &__elem,
+    &__splash {
+      width: 100%;
+      height: 100%;
+    }
+    &__controls {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      background-color: #151515;
+      height: pxToRem(35px);
+      width: 100%;
+    }
+    &__volume {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &-icon {
+        cursor: pointer;
+        width: 14px;
+        height: 17px;
+        fill: white;
+        margin-right: pxToRem(24px);
+      }
+      &-playback {
+        position: relative;
+        width: pxToRem(58px);
+        height: pxToRem(5px);
+        background-color: #333;
+      }
+      &-button {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        overflow: visible;
+        width: 15px;
+        height: 15px;
+        fill: $accent-color;
+      }
+    }
+    &__start {
+      cursor: pointer;
+      width: 12px;
+      height: 17px;
+      fill: white;
+    }
+    &__playback {
+      position: relative;
+      width: 67%;
+      height: pxToRem(4px);
+      background-color: #333;
+      &-button {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        overflow: visible;
+        width: 15px;
+        height: 15px;
+        fill: $accent-color;
+      }
+    }
+    &.active {
+      .player__splash {
+        display: none;
+      }
+    }
+  }
+}
+
+@include adaptive($tab) {
+  .player {
+    max-width: 594px;
+  }
+}
+
+@include adaptive($mob) {
+  .player {
+    max-width: 394px;
+    &__volume {
+      &-icon {
+        margin-right: 0;
+      }
+    }
+  }
+}

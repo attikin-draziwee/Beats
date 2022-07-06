@@ -494,6 +494,37 @@
             </div>
           </div>
         </section>
+        <section class="work">
+          <div class="container work__container">
+            <h2 class="heading-1 review__heading">Как мы работаем</h2>
+            <div class="player">
+              <div class="player__wrapper">
+                <div id="yt-player" class="player__elem"></div>
+                <div class="player__splash"></div>
+              </div>
+              <div class="player__controls">
+                <svg class="player__start" xmlns="http://www.w3.org/2000/svg" width="12" height="17">
+                  <use xlink:href="./icons/svg_sprite.svg#play"></use>
+                </svg>
+                <div class="player__playback">
+                  <svg class="player__playback-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+                    <circle r="7" cx="7" cy="7"></circle>
+                  </svg>
+                </div>
+                <div class="player__volume">
+                  <svg class="player__volume-icon" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="./icons/svg_sprite.svg#volume"></use>
+                  </svg>
+                  <div class="player__volume-playback">
+                    <svg class="player__volume-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+                      <circle r="7" cx="7" cy="7"></circle>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <section class="delivery">
           <div class="container delivery__container">
             <div class="delivery-decoration">
@@ -599,8 +630,8 @@
             </form>
           </div>
         </section>
-        <section class="map">
-          <img src="./img/map.png" alt="Карта с указанием мест покупки Beats" class="map__pic">
+        <section class="map-section">
+          <div id="map"></div>
         </section>
       </main>
     </div>
@@ -696,12 +727,16 @@
     </ul>
   </nav>
 </script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
 <script src="./js/jquery.min.js"></script>
 <script src="./js/hamburger.js"></script>
 <script src="./js/team.js"></script>
 <script src="./js/review.js"></script>
 <script src="./js/product.js"></script>
+<script src="./js/work.js"></script>
 <script src="./js/form.js"></script>
+<script src="./js/map.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 </html>
