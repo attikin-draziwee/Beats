@@ -2,18 +2,28 @@
   box-sizing: border-box;
 }
 
-@include adaptive($laptop, $laptop) {
-  html,
-  body {
-    position: relative;
-    font-family: Alegreya, sans-serif;
-    font-size: $baseFontSize;
-    font-weight: normal;
-    font-style: normal;
-    line-height: 1.42em;
-    color: $text;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+html,
+body {
+  position: relative;
+  font-family: Alegreya, sans-serif;
+  font-size: $baseFontSize;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.42em;
+  color: $text;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@include adaptive($mob) {
+  html {
+    font-size: 3.333vmin;
+  }
+}
+
+body {
+  &.locked {
+    overflow: hidden;
   }
 }
 
@@ -65,71 +75,68 @@ td {
   margin: 0;
 }
 
-@include adaptive($laptop, $laptop) {
-  .paginator {
-    position: fixed;
-    z-index: 5;
-    transform: translateY(-50%);
-    top: 50%;
-    right: pxToRem(44px);
-    &-list {
-      flex-direction: column;
-    }
-    &-item {
-      position: relative;
-      cursor: pointer;
-      width: pxToRem(6px);
-      height: pxToRem(6px);
-      border-radius: 50%;
-      background-color: #7b7b7b;
-      margin-bottom: pxToRem(15px);
-      &--active {
-        background-color: $accent-color;
-        &::before {
-          position: absolute;
-          content: "";
-          width: pxToRem(16px);
-          height: pxToRem(16px);
-          border: pxToRem(1px) solid $accent-color;
-          border-radius: 50%;
-          transform: translate(-33%, -33%);
-        }
+.paginator {
+  position: fixed;
+  z-index: 5;
+  transform: translateY(-50%);
+  top: 50%;
+  right: pxToRem(44px);
+  &-list {
+    flex-direction: column;
+  }
+  &-item {
+    position: relative;
+    cursor: pointer;
+    width: pxToRem(6px);
+    height: pxToRem(6px);
+    border-radius: 50%;
+    background-color: #7b7b7b;
+    margin-bottom: pxToRem(15px);
+    &--active {
+      background-color: $accent-color;
+      &::before {
+        position: absolute;
+        content: "";
+        width: pxToRem(16px);
+        height: pxToRem(16px);
+        border: pxToRem(1px) solid $accent-color;
+        border-radius: 50%;
+        transform: translate(-33%, -33%);
       }
     }
   }
 }
+
 @include adaptive($tab) {
   .paginator {
     display: none;
   }
 }
 
-@include adaptive($laptop, $laptop) {
-  .heading-1 {
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: Play;
-    font-weight: bold;
-    font-size: pxToRem(48px);
-    line-height: 1.1em;
-  }
+.heading-main {
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Play;
+  font-weight: bold;
+  font-size: pxToRem(48px);
+  line-height: 1.1em;
 }
+
 @include adaptive($mob) {
-  .heading-1 {
+  .heading-main {
     font-size: pxToRem(32px);
   }
 }
 
-@include adaptive($laptop, $laptop) {
-  .container {
-    margin: 0 auto;
-    max-width: $containerWidth;
-    width: calc(100% - $containerPaddings);
-    height: 100vh;
-    width: 100%;
-  }
+.container {
+  margin: 0 auto;
+  max-width: $containerWidth;
+  width: calc(100% - $containerPaddings);
+  height: 100vh;
+  width: 100%;
 }
+
 @include adaptive($tab) {
   $containerPaddings: 22px;
   .container {
@@ -167,74 +174,73 @@ td {
   }
 }
 
-@include adaptive($laptop, $laptop) {
-  .menu {
-    flex: 1;
-    color: $header-color;
-    font-size: pxToRem(18px);
-    &__list {
-      justify-content: space-evenly;
-    }
-    &__item {
-      font-size: inherit;
-      line-height: inherit;
-      color: inherit;
-      transition: 0.3s ease-in;
-      &:hover {
-        color: $accent-color;
-      }
+.menu {
+  flex: 1;
+  color: $header-color;
+  font-size: pxToRem(18px);
+  &__list {
+    justify-content: space-evenly;
+  }
+  &__item {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    transition: 0.3s ease-in;
+    &:hover {
+      color: $accent-color;
     }
   }
 }
+
 @include adaptive($tab) {
   .header__menu {
     display: none;
   }
 }
 
-@include adaptive($laptop, $laptop) {
-  .contact {
-    flex: 0.22;
+.contact {
+  flex: 0.22;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  &__meta {
+    font-family: Play;
+    font-size: pxToRem(18px);
+    line-height: 1.3em;
+    color: #292929;
+    white-space: nowrap;
+    margin-bottom: pxToRem(3px);
+  }
+  &__phone {
+    text-align: right;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    &__meta {
-      font-family: Play;
-      font-size: pxToRem(18px);
-      line-height: 1.3em;
-      color: #292929;
-      white-space: nowrap;
-      margin-bottom: pxToRem(3px);
-    }
-    &__phone {
-      text-align: right;
-      position: relative;
-      display: flex;
-      align-items: center;
-      font-size: pxToRem(18px);
-      line-height: 1em;
-      font-family: Play;
-      color: $header-color;
+    align-items: center;
+    font-size: pxToRem(18px);
+    line-height: 1em;
+    font-family: Play;
+    color: $header-color;
+    transition: 0.3s ease-out;
+    &-icon {
       transition: 0.3s ease-out;
-      &-icon {
-        transition: 0.3s ease-out;
-        width: pxToRem(14px);
-        height: pxToRem(14px);
-        fill: #292929;
-        margin-right: pxToRem(6px);
-      }
-      &-text {
-        width: max-content;
-      }
-      &:hover {
-        color: $accent-color;
-        .contact__phone-icon {
-          fill: $accent-color;
-        }
+      width: pxToRem(14px);
+      height: pxToRem(14px);
+      fill: #292929;
+      margin-right: pxToRem(6px);
+      overflow: visible;
+    }
+    &-text {
+      width: max-content;
+    }
+    &:hover {
+      color: $accent-color;
+      .contact__phone-icon {
+        fill: $accent-color;
       }
     }
   }
 }
+
 @include adaptive($mob) {
   .contact {
     align-items: center;
@@ -244,51 +250,49 @@ td {
   }
 }
 
-@include adaptive($laptop, $laptop) {
-  .social {
-    width: pxToRem(150px);
-    &__list {
-      width: 100%;
-      justify-content: space-between;
-    }
-    &__item {
-    }
-    &__link {
-    }
-    &__icon {
-      transition: 0.3s ease-out;
-      fill: #b3b3b3;
-      &:hover {
-        fill: black;
-      }
+.social {
+  width: pxToRem(150px);
+  &__list {
+    width: 100%;
+    justify-content: space-between;
+  }
+  &__item {
+  }
+  &__link {
+  }
+  &__icon {
+    transition: 0.3s ease-out;
+    fill: #b3b3b3;
+    &:hover {
+      fill: black;
     }
   }
 }
+
 @include adaptive($mob) {
   .social {
     width: pxToRem(138px);
   }
 }
 
-@include adaptive($laptop, $laptop) {
-  .button {
-    cursor: pointer;
-    display: inline-block;
-    font-family: Play;
-    font-size: pxToRem(16px);
-    font-weight: bold;
-    // line-height: 1.13em;
-    text-transform: uppercase;
-    color: white;
-    padding: 1.125em 2.56em;
-    border-radius: 6.25em;
-    background-color: $accent-color;
-    transition: 0.3s ease-out;
-    &:hover {
-      background-color: #ca1b36;
-    }
+.button {
+  cursor: pointer;
+  display: inline-block;
+  font-family: Play;
+  font-size: pxToRem(16px);
+  font-weight: bold;
+  // line-height: 1.13em;
+  text-transform: uppercase;
+  color: white;
+  padding: 1.125em 2.56em;
+  border-radius: 6.25em;
+  background-color: $accent-color;
+  transition: 0.3s ease-out;
+  &:hover {
+    background-color: #ca1b36;
   }
 }
+
 @include adaptive($mob) {
   .button {
     font-size: pxToRem(19px);
@@ -303,54 +307,51 @@ td {
   }
 }
 
-@include adaptive($laptop, $laptop) {
-  .hamburger {
-    display: none;
-    &__icon {
-      width: 27px;
-      height: 24px;
-      fill: #0d0e0f;
-    }
+.hamburger {
+  display: none;
+  &__icon {
+    width: 27px;
+    height: 24px;
+    fill: #0d0e0f;
   }
 }
+
 @include adaptive($tab) {
   .hamburger {
     display: block;
   }
 }
 
-@include adaptive($laptop, $laptop) {
-  .slider {
-    &__list {
-      overflow-x: clip;
+.slider {
+  &__list {
+    overflow-x: clip;
+  }
+  &__item {
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+  }
+  &__arrow {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+    &-left,
+    &-right {
+      &-icon {
+        fill: none;
+        stroke: black;
+        stroke-width: 2;
+        stroke-linecap: round;
+        width: 13px;
+        height: 27px;
+      }
     }
-    &__item {
-      position: relative;
-      flex-shrink: 0;
-      width: 100%;
+    &-left {
+      left: 0;
     }
-    &__arrow {
-      position: absolute;
-      z-index: 5;
-      top: 50%;
-      transform: translateY(-50%);
-      &-left,
-      &-right {
-        &-icon {
-          fill: none;
-          stroke: black;
-          stroke-width: 2;
-          stroke-linecap: round;
-          width: 13px;
-          height: 27px;
-        }
-      }
-      &-left {
-        left: 0;
-      }
-      &-right {
-        right: 0;
-      }
+    &-right {
+      right: 0;
     }
   }
 }

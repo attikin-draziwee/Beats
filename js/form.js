@@ -45,6 +45,8 @@ function validField(element) {
 }
 
 function createOverlay(text) {
+  const body = document.body;
+  body.classList.add('locked');
   const overlay = document.createElement('div');
   overlay.classList.add('overlay');
   overlay.innerHTML = '<div class="overlay__message"><div class="overlay__text">Сообщение отправлено</div><a href="#" class="button close">Закрыть</a></div>';
@@ -53,7 +55,8 @@ function createOverlay(text) {
   const overlayClose = overlay.querySelector('.close');
   overlayClose.addEventListener('click', function (e) {
     e.preventDefault();
-    document.body.removeChild(overlay);
+    body.classList.remove('locked');
+    body.removeChild(overlay);
   });
   overlay.addEventListener('click', (e) => {
     if (e.target == overlay)
