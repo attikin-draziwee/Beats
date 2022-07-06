@@ -514,13 +514,13 @@
                   <li class="delivery__item delivery__item--two">
                     <label class="delivery__input delivery__input">
                       <span class="delivery__hint delivery__hint--shadow">Имя</span>
-                      <input type="text" name="" id="" class="delivery__space" />
+                      <input type="text" name="name" id="" class="delivery__space" required />
                     </label>
                   </li>
                   <li class="delivery__item delivery__item--two">
                     <label class="delivery__input delivery__input">
                       <span class="delivery__hint delivery__hint">Телефон</span>
-                      <input type="tel" name="" id="" class="delivery__space" />
+                      <input type="tel" name="phone" id="" class="delivery__space" required />
                     </label>
                   </li>
                 </ul>
@@ -528,7 +528,7 @@
                   <li class="delivery__item delivery__item--fluid">
                     <label class="delivery__input delivery__input">
                       <span class="delivery__hint delivery__hint">Улица</span>
-                      <input type="text" name="" id="" class="delivery__space" />
+                      <input type="text" name="street" id="" class="delivery__space" />
                     </label>
                   </li>
                 </ul>
@@ -536,25 +536,25 @@
                   <li class="delivery__item delivery__item--four">
                     <label class="delivery__input delivery__input--four">
                       <span class="delivery__hint delivery__hint">Дом</span>
-                      <input type="tel" name="" id="" class="delivery__space" />
+                      <input type="number" name="home" id="" class="delivery__space" />
                     </label>
                   </li>
                   <li class="delivery__item delivery__item--four">
                     <label class="delivery__input delivery__input--four">
                       <span class="delivery__hint delivery__hint">Корпус</span>
-                      <input type="tel" name="" id="" class="delivery__space" />
+                      <input type="number" name="corp" id="" class="delivery__space" />
                     </label>
                   </li>
                   <li class="delivery__item delivery__item--four">
                     <label class="delivery__input delivery__input--four">
                       <span class="delivery__hint delivery__hint">Квартира</span>
-                      <input type="tel" name="" id="" class="delivery__space" />
+                      <input type="number" name="room" id="" class="delivery__space" />
                     </label>
                   </li>
                   <li class="delivery__item delivery__item--four">
                     <label class="delivery__input delivery__input--four">
                       <span class="delivery__hint delivery__hint">Этаж</span>
-                      <input type="tel" name="" id="" class="delivery__space" />
+                      <input type="number" name="floor" id="" class="delivery__space" />
                     </label>
                   </li>
                 </ul>
@@ -564,8 +564,8 @@
                   <li class="delivery__item delivery__item--fluid">
                     <label class="delivery__input delivery__input">
                       <span class="delivery__hint delivery__hint">Комментарий</span>
-                      <textarea name="" id="" class="delivery__space delivery__space--area" cols="30"
-                        rows="10"></textarea>
+                      <textarea name="desc" id="" class="delivery__space delivery__space--area" cols="30" rows="10"
+                        required></textarea>
                     </label>
                   </li>
                 </ul>
@@ -701,6 +701,7 @@
 <script src="./js/team.js"></script>
 <script src="./js/review.js"></script>
 <script src="./js/product.js"></script>
+<script src="./js/form.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 </html>

@@ -111,7 +111,8 @@
         padding-top: pxToRem(12px);
         max-height: pxToRem(152px);
       }
-      &:focus {
+      &:focus,
+      &--invalid {
         outline: pxToRem(3px) solid $accent-color;
       }
     }
