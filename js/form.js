@@ -4,41 +4,41 @@ const formBtn = document.querySelector('.delivery__button'),
   form = document.querySelector('.delivery__form');
 
 formBtn.addEventListener('click', function () {
-  validForm(form);
+  clearClass('delivery__space--invalid');
+
+  if (validForm(form)) {
+    const date = {
+      name: form.elements.name.value,
+      phone: form.elements.phone.value,
+      comment: form.elements.desc.value,
+      to: 'yongeryk@gmail.com'
+    };
+
+    const xhr = new XMLHttpRequest();
+    xhr.responseType = 'json';
+    xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+    xhr.setRequestHeader('content-type', 'application/json');
+    xhr.send(JSON.stringify(date));
+
+    xhr.addEventListener('load', (e) => {
+      document.body.appendChild(createOverlay(xhr.response.message));
+    });
+  };
 });
 
 function validForm(form) {
-  switch (true) {
-    case !validField(form.elements.name):
-    case !validField(form.elements.phone):
-    case !validField(form.elements.desc):
-      return false;
-    default:
-      const date = {
-        name: form.elements.name.value,
-        phone: form.elements.phone.value,
-        comment: form.elements.desc.value,
-        to: 'yongeryk@gmail.com'
-      };
-      console.log(date);
-      const xhr = new XMLHttpRequest();
-      xhr.responseType = 'json';
-      xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-      xhr.setRequestHeader('content-type', 'application/json');
-      xhr.send(JSON.stringify(date));
-
-      xhr.addEventListener('load', (e) => {
-        console.log(xhr.response.status);
-        document.body.appendChild(createOverlay(xhr.response.message));
-      });
-
+  let result = true;
+  for (let i of [form.elements.name, form.elements.phone, form.elements.desc]) {
+    if (!validField(i))
+      result = false;
   }
+  return result;
 }
 
 function validField(element) {
-  clearClass('delivery__space--invalid');
   if (!element.checkValidity()) {
     element.classList.add('delivery__space--invalid');
+    return false;
   } else {
     return true;
   }
