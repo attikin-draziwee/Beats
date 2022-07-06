@@ -12,11 +12,11 @@ const playerVolumeButton = document.querySelector('.player__volume-button');
 function play() {
   if (playerContainer.classList.contains('play')) {
     playerContainer.classList.remove('play');
-    playerPlayControl.children[0].setAttribute('xlink:href', '/icons/svg_sprite.svg#play');
+    playerPlayControl.children[0].setAttribute('xlink:href', 'icons/svg_sprite.svg#play');
     player.pauseVideo();
   } else {
     playerContainer.classList.add('play');
-    playerPlayControl.children[0].setAttribute('xlink:href', '/icons/svg_sprite.svg#pause');
+    playerPlayControl.children[0].setAttribute('xlink:href', 'icons/svg_sprite.svg#pause');
     player.playVideo();
   }
 }
@@ -57,11 +57,11 @@ function onPlayerStateChange(e) {
   switch (e.data) {
     case 2:
       playerContainer.classList.remove('play');
-      playerPlayControl.children[0].setAttribute('xlink:href', '/icons/svg_sprite.svg#play');
+      playerPlayControl.children[0].setAttribute('xlink:href', 'icons/svg_sprite.svg#play');
       break;
     case 1:
       playerContainer.classList.add('play');
-      playerPlayControl.children[0].setAttribute('xlink:href', '/icons/svg_sprite.svg#pause');
+      playerPlayControl.children[0].setAttribute('xlink:href', 'icons/svg_sprite.svg#pause');
       break;
   }
 }
