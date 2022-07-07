@@ -12,13 +12,13 @@
   position: relative;
   max-width: 662px;
   width: 100%;
+  max-height: pxToRem(392px);
+  height: fit-content;
   &__wrapper {
-    height: pxToRem(392px);
+    width: 100%;
   }
-  &__splash {
-    position: absolute;
-    top: 0;
-    background: url("../img/preview.webp") center center/cover no-repeat;
+  &__video {
+    width: 100%;
   }
   &__elem,
   &__splash {
@@ -50,12 +50,13 @@
       position: relative;
       width: pxToRem(58px);
       height: pxToRem(5px);
-      background-color: #333;
+      background-color: $accent-color;
     }
     &-button {
       cursor: pointer;
       position: absolute;
       top: 50%;
+      left: 100%;
       transform: translateY(-50%);
       overflow: visible;
       width: 15px;

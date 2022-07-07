@@ -499,8 +499,9 @@
             <h2 class="heading-main review__heading">Как мы работаем</h2>
             <div class="player">
               <div class="player__wrapper">
-                <div id="yt-player" class="player__elem"></div>
-                <div class="player__splash"></div>
+                <video poster="./img/preview.webp" class="player__video">
+                  <source type="video/webm" src="./video/promo.webm">
+                </video>
               </div>
               <div class="player__controls">
                 <svg class="player__start" width="12" height="17">
@@ -508,7 +509,7 @@
                 </svg>
                 <div class="player__playback">
                   <svg class="player__playback-button" viewBox="0 0 15 15">
-                    <circle r="7" cx="7" cy="7"></circle>
+                    <circle r="5" cx="7" cy="7"></circle>
                   </svg>
                 </div>
                 <div class="player__volume">
@@ -517,7 +518,7 @@
                   </svg>
                   <div class="player__volume-playback">
                     <svg class="player__volume-button" viewBox="0 0 15 15">
-                      <circle r="7" cx="7" cy="7"></circle>
+                      <circle r="5" cx="7" cy="7"></circle>
                     </svg>
                   </div>
                 </div>
@@ -728,7 +729,6 @@
   </nav>
 </script>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-<script src="https://www.youtube.com/iframe_api"></script>
 <script src="./js/jquery.min.js"></script>
 <script src="./js/hamburger.js"></script>
 <script src="./js/team.js"></script>

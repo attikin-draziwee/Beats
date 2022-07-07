@@ -1,108 +1,83 @@
 'use strict';
-let player;
-const playerStart = document.querySelector('.player__start');
-const playerContainer = document.querySelector('.player');
-const playerPlayControl = document.querySelector('.player__start');
-const playerVolume = document.querySelector('.player__volume-icon');
-const playerPlayBack = document.querySelector('.player__playback');
-const playerVolumeBack = document.querySelector('.player__volume-playback');
-const playerVolumeButton = document.querySelector('.player__volume-button');
 
+const video = document.querySelector('.player__video');
+const playerPlay = document.querySelector('.player__start').firstElementChild;
+let interval;
+const playerBar = document.querySelector('.player__playback');
+const playerVolume = document.querySelector('.player__volume');
 
-function play() {
-  if (playerContainer.classList.contains('play')) {
-    playerContainer.classList.remove('play');
-    playerPlayControl.children[0].setAttribute('xlink:href', 'icons/svg_sprite.svg#play');
-    player.pauseVideo();
+video.addEventListener('click', e => { setPlay(); });
+playerPlay.addEventListener('click', e => { setPlay(); });
+playerVolume.addEventListener('click', e => {
+  switch (true) {
+    case e.target.classList.contains('player__volume-icon'):
+      setMute(e.target, true);
+      break;
+    case e.target.parentNode.classList.contains('player__volume-icon'):
+      setMute(e.target);
+      break;
+  }
+});
+$('.player__playback').on('click', function (e) {
+  setTime(e, this, video);
+});
+$('.player__volume-playback').on('click', function (e) {
+  setVolume(e, this, video);
+});
+
+function setTime(e, bar, video) {
+  const clickPos = e.originalEvent.layerX;
+  let newPos = (video.duration * clickPos) / getWidth(bar);
+  video.currentTime = newPos;
+}
+function setVolume(e, bar, video) {
+  const clickPos = e.originalEvent.layerX;
+  let vol = clickPos / getWidth(bar);
+  let percent = vol * 100;
+  bar.style.background = `linear-gradient(90deg, #e01f3d 0%, #e01f3d ${percent}%, #333 ${percent}%, #333 100%)`;
+  $('.player__volume-button').css({
+    left: `${percent - 15}%`,
+  });
+  video.volume = vol < 0 ? 0 : vol;
+}
+
+function setPlay() {
+  if (video.paused) {
+    video.play();
+    playerPlay.setAttribute('xlink:href', 'icons/svg_sprite.svg#pause');
+    interval = setInterval(e => {
+      updateBar(playerBar, video);
+    }, 100);
   } else {
-    playerContainer.classList.add('play');
-    playerPlayControl.children[0].setAttribute('xlink:href', 'icons/svg_sprite.svg#pause');
-    player.playVideo();
-  }
-}
-
-const eventInit = () => {
-  playerStart.addEventListener('click', function () {
-    play();
-  });
-  $('.player__splash').on('click', e => {
-    play();
-  });
-  playerVolume.addEventListener('click', function () {
-    playerContainer.classList.toggle('muted');
-    if (playerContainer.classList.contains('muted')) {
-      player.mute();
-      playerVolume.style.fill = '#aaa';
-    } else {
-      player.unMute();
-      playerVolume.style.fill = '#FFF';
-    }
-  });
-  $('.player__playback').click(e => {
-    const clickPos = e.originalEvent.layerX;
-    let newPos = (player.getDuration() * clickPos) / getWidth(playerPlayBack);
-    player.seekTo(newPos);
-  });
-  $('.player__volume-playback').click(e => {
-    const clickPos = e.originalEvent.layerX;
-    const percent = clickPos * 100 / getWidth(playerVolumeBack);
-    playerVolumeBack.style.background = `linear-gradient(90deg, #e01f3d 0%, #e01f3d ${percent}%, #333 ${percent}%, #333 100%)`;
-    playerVolumeButton.style.left = `${percent - 5}%`;
-    player.setVolume(percent);
-  });
-};
-
-function onPlayerStateChange(e) {
-  playerContainer.classList.add('active');
-  switch (e.data) {
-    case 2:
-      playerContainer.classList.remove('play');
-      playerPlayControl.children[0].setAttribute('xlink:href', 'icons/svg_sprite.svg#play');
-      break;
-    case 1:
-      playerContainer.classList.add('play');
-      playerPlayControl.children[0].setAttribute('xlink:href', 'icons/svg_sprite.svg#pause');
-      break;
-  }
-}
-
-function onPlayerReady() {
-  let interval;
-  if (typeof interval !== 'undefined') {
+    video.pause();
+    playerPlay.setAttribute('xlink:href', 'icons/svg_sprite.svg#play');
     clearInterval(interval);
   }
-  interval = setInterval(() => {
-    let playerTime = player.getCurrentTime();
-    let completePers = (playerTime * getWidth(playerPlayBack)) / player.getDuration();
-    playerPlayBack.children[0].style.left = `${completePers}px`;
-    playerPlayBack.style.background = `linear-gradient(90deg, #e01f3d 0%, #e01f3d ${completePers}px, #333 ${completePers}px, #333 100%)`;
-  }, 1000);
-  playerVolumeBack.style.background = '#e01f3d';
-  playerVolumeButton.style.left = '100%';
 }
 
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('yt-player', {
-    height: '233',
-    width: '394',
-    videoId: 'V2i1YkfrM54',
-    playerVars: {
-      controls: 0,
-      disablekb: 0,
-      showinfo: 0,
-      rel: 0,
-      autoplay: 0,
-      modestbranding: 0,
-    },
-    events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-    },
-  });
+function setMute(el, isParent = false) {
+  if (!video.muted) {
+    video.muted = true;
+    if (!isParent)
+      el.style.fill = '#aaa';
+    else
+      el.firstElementChild.style.fill = '#aaa';
+  } else {
+    video.muted = false;
+    if (!isParent)
+      el.style.fill = '#FFF';
+    else
+      el.firstElementChild.style.fill = '#FFF';
+  }
+}
+
+function updateBar(bar, video) {
+  let videoCurrentTime = video.currentTime;
+  let completePers = (videoCurrentTime * getWidth(bar)) / video.duration;
+  bar.firstElementChild.style.left = `${completePers}px`;
+  bar.style.background = `linear-gradient(90deg, #e01f3d 0%, #e01f3d ${completePers}px, #333 ${completePers}px, #333 100%)`;
 }
 
 function getWidth(el) {
   return parseInt(window.getComputedStyle(el).width);
 }
-
-eventInit();
