@@ -75,15 +75,11 @@ $(window).on('keydown', e => {
   }
 })
 
-const md = new MobileDetect();
-
-if (md.phone()) {
-  $("body").swipe({
-    swipe: function (event, direction) {
-      if (direction == 'up')
-        scrollDirection('next');
-      else if (direction == 'down')
-        scrollDirection('prev');
-    }
-  });
-}
+$("body").swipe({
+  swipe: function (event, direction) {
+    if (direction == 'up')
+      scrollDirection('next');
+    else if (direction == 'down')
+      scrollDirection('prev');
+  }
+});
