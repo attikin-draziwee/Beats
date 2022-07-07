@@ -77,7 +77,7 @@ td {
 
 .paginator {
   position: fixed;
-  z-index: 5;
+  z-index: 105;
   transform: translateY(-50%);
   top: 50%;
   right: pxToRem(44px);
@@ -189,6 +189,9 @@ td {
     &:hover {
       color: $accent-color;
     }
+  }
+  &__link {
+    cursor: pointer;
   }
 }
 

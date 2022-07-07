@@ -20,8 +20,12 @@ hamburger.addEventListener('click', e => {
 
   overlay.addEventListener('click', e => {
     e.preventDefault();
-    if (e.target == overlay || e.target.classList.contains('menu__link'))
+    if (e.target.classList.contains('menu__link')) {
+      scrollTo($(e.target).attr('to'));
       close.click();
+    } else if (e.target == overlay) {
+      close.click();
+    }
   });
 
 });
