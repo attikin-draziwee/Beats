@@ -16,6 +16,9 @@ $headerHeight: pxToRem(64px);
     padding-top: pxToRem(24px);
     height: min-content;
   }
+  &.dn {
+    display: none;
+  }
 }
 
 @include adaptive($tab) {
@@ -33,6 +36,9 @@ $headerHeight: pxToRem(64px);
     &__contact {
       display: none;
     }
+    &.dn {
+      display: unset;
+    }
   }
 }
 @include adaptive($mob) {
@@ -42,6 +48,9 @@ $headerHeight: pxToRem(64px);
       box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.009);
       background-color: #f5f5f5;
       padding: pxToRem(12px) 0 pxToRem(12px) 0;
+    }
+    &.dn {
+      display: unset;
     }
   }
 }
