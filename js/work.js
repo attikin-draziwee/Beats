@@ -7,7 +7,7 @@ const playerBar = document.querySelector('.player__playback');
 const playerVolume = document.querySelector('.player__volume');
 
 video.addEventListener('click', e => { setPlay(); });
-playerPlay.addEventListener('click', e => { setPlay(); });
+playerPlay.parentNode.addEventListener('click', e => { setPlay(); });
 playerVolume.addEventListener('click', e => {
   switch (true) {
     case e.target.classList.contains('player__volume-icon'):
