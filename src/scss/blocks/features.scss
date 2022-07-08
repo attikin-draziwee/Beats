@@ -120,7 +120,7 @@
     width: calc(28%);
     &::after {
       position: absolute;
-      content: url("../img/feat-divider.svg");
+      content: url("./img/feat-divider.svg");
       top: pxToRem(60px);
       right: -30%;
     }
