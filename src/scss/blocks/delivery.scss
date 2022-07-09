@@ -139,7 +139,7 @@
     &-button {
       display: none;
       &:checked + .delivery__hint--check::after {
-        content: url("../icons/checked.svg");
+        content: url("./img/checked.svg");
         position: absolute;
         display: inline-block;
         left: pxToRem(7px);
