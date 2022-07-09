@@ -6,7 +6,7 @@ const sass = require('gulp-sass')(require('sass'));
 const sassModul = require('gulp-sass-glob');
 const gcmq = require('gulp-group-css-media-queries');
 const concat = require('gulp-concat');
-const cssMinify = require('gulp-css-minify');
+const cssMinify = require('gulp-clean-css');
 const autoPrefix = require('gulp-autoprefixer');
 const svgo = require('gulp-svgo');
 const svgSprite = require('gulp-svg-sprite');
@@ -50,6 +50,7 @@ gulp.task('sass', () => gulp.src(styles)
   .pipe(gulpCondition(isProd == 'build', autoPrefix({
     browsers: ['last 2 versions'],
   })))
+  .pipe(gulpCondition(isProd == 'build', cssMinify()))
   .pipe(gulp.dest('./docs/'))
   .pipe(reload({ stream: true })));
 
