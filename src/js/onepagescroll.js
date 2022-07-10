@@ -61,6 +61,8 @@ $(window).on('wheel', e => {
   }
 });
 
+$(".wrapper").on("touchmove", e => e.preventDefault());
+
 $(window).on('keydown', e => {
   const next = 40;
   const prev = 38;
