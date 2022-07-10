@@ -80,7 +80,7 @@ const md = new MobileDetect(window.navigator.userAgent);
 const isMobile = md.mobile() || md.tablet();
 
 if (isMobile) {
-  $(".wrapper").swipe({
+  $(".wrapper-content").swipe({
     swipe: function (event, direction) {
       if (direction == 'up')
         scrollDirection('next');
