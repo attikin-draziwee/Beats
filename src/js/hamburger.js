@@ -23,7 +23,7 @@ hamburger.addEventListener('click', e => {
   overlay.addEventListener('click', e => {
     e.preventDefault();
     if (e.target.classList.contains('menu__link')) {
-      scrollTo($(e.target).attr('to'));
+      scrollTo($(e.target).attr('data-to'));
       close.click();
     } else if (e.target == overlay) {
       close.click();

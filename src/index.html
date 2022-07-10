@@ -24,25 +24,25 @@
       <nav class="menu header__menu">
         <ul class="menu__list">
           <li class="menu__item">
-            <a class="menu__link" to=".features">О нас</a>
+            <a class="menu__link" data-to=".features">О нас</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" to=".product">Наушники</a>
+            <a class="menu__link" data-to=".product">Наушники</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" to=".team">Команда</a>
+            <a class="menu__link" data-to=".team">Команда</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" to=".colors">Цвета</a>
+            <a class="menu__link" data-to=".colors">Цвета</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" to=".review">Отзывы</a>
+            <a class="menu__link" data-to=".review">Отзывы</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" to=".work">Как мы работаем</a>
+            <a class="menu__link" data-to=".work">Как мы работаем</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" to=".map-section">Контакты</a>
+            <a class="menu__link" data-to=".map-section">Контакты</a>
           </li>
         </ul>
       </nav>
@@ -85,19 +85,19 @@
                 <ul class="advantage__list">
                   <li class="advantage__item">
                     <svg class="advantage__pic">
-                      <use xlink:href="./icons/svg_sprite.svg#adv-1">
+                      <use xlink:href="./icons/svg_sprite.svg#adv-1"></use>
                     </svg>
                     <div class="advantage__desc">Безупречный звук</div>
                   </li>
                   <li class="advantage__item">
                     <svg class="advantage__pic">
-                      <use xlink:href="./icons/svg_sprite.svg#adv-2">
+                      <use xlink:href="./icons/svg_sprite.svg#adv-2"></use>
                     </svg>
                     <div class="advantage__desc">До 40 часов работы</div>
                   </li>
                   <li class="advantage__item">
                     <svg class="advantage__pic">
-                      <use xlink:href="./icons/svg_sprite.svg#adv-3">
+                      <use xlink:href="./icons/svg_sprite.svg#adv-3"></use>
                     </svg>
                     <div class="advantage__desc">Технология Fast Fuel</div>
                   </li>
@@ -125,7 +125,7 @@
             <ul class="features__list">
               <li class="feature__item">
                 <svg class="feature__thumb">
-                  <use xlink:href="./icons/svg_sprite.svg#feat-1">
+                  <use xlink:href="./icons/svg_sprite.svg#feat-1"></use>
                 </svg>
                 <div class="feature__content">
                   <h3 class="feature__title">40 часов работы</h3>
@@ -137,7 +137,7 @@
               </li>
               <li class="feature__item">
                 <svg class="feature__thumb">
-                  <use xlink:href="./icons/svg_sprite.svg#feat-2">
+                  <use xlink:href="./icons/svg_sprite.svg#feat-2"></use>
                 </svg>
                 <div class="feature__content">
                   <h3 class="feature__title">Фирменное звучание</h3>
@@ -150,7 +150,7 @@
               </li>
               <li class="feature__item">
                 <svg class="feature__thumb">
-                  <use xlink:href="./icons/svg_sprite.svg#feat-3">
+                  <use xlink:href="./icons/svg_sprite.svg#feat-3"></use>
                 </svg>
                 <div class="feature__content">
                   <h3 class="feature__title">Быстрая зарядка</h3>
@@ -180,7 +180,7 @@
                 <li class="slider__item">
                   <div class="product__item">
                     <div class="product__img">
-                      <img src="./img/products/bs-3-silver.webp" alt="Beats Solo 3 цвет Атласное серебро" href="#"
+                      <img src="./img/products/bs-3-silver.webp" alt="Beats Solo 3 цвет Атласное серебро"
                         class="product__thumb">
                     </div>
                     <div class="product__content">
@@ -266,7 +266,7 @@
                 <li class="slider__item">
                   <div class="product__item">
                     <div class="product__img">
-                      <img src="./img/products/bs-pro-red.webp" alt="Beats Solo 3 цвет Атласное серебро" href="#"
+                      <img src="./img/products/bs-pro-red.webp" alt="Beats Solo 3 цвет Атласное серебро"
                         class="product__thumb">
                     </div>
                     <div class="product__content">
@@ -595,13 +595,13 @@
                   <li class="delivery__item delivery__item--two">
                     <label class="delivery__input delivery__input">
                       <span class="delivery__hint delivery__hint--shadow">Имя</span>
-                      <input type="text" name="name" id="" class="delivery__space" required />
+                      <input type="text" name="name" class="delivery__space" required />
                     </label>
                   </li>
                   <li class="delivery__item delivery__item--two">
                     <label class="delivery__input delivery__input">
                       <span class="delivery__hint delivery__hint">Телефон</span>
-                      <input type="tel" name="phone" id="" class="delivery__space" required />
+                      <input type="tel" name="phone" class="delivery__space" required />
                     </label>
                   </li>
                 </ul>
@@ -609,7 +609,7 @@
                   <li class="delivery__item delivery__item--fluid">
                     <label class="delivery__input delivery__input">
                       <span class="delivery__hint delivery__hint">Улица</span>
-                      <input type="text" name="street" id="" class="delivery__space" />
+                      <input type="text" name="street" class="delivery__space" />
                     </label>
                   </li>
                 </ul>
@@ -617,25 +617,25 @@
                   <li class="delivery__item delivery__item--four">
                     <label class="delivery__input delivery__input--four">
                       <span class="delivery__hint delivery__hint">Дом</span>
-                      <input type="number" name="home" id="" class="delivery__space" />
+                      <input type="number" name="home" class="delivery__space" />
                     </label>
                   </li>
                   <li class="delivery__item delivery__item--four">
                     <label class="delivery__input delivery__input--four">
                       <span class="delivery__hint delivery__hint">Корпус</span>
-                      <input type="number" name="corp" id="" class="delivery__space" />
+                      <input type="number" name="corp" class="delivery__space" />
                     </label>
                   </li>
                   <li class="delivery__item delivery__item--four">
                     <label class="delivery__input delivery__input--four">
                       <span class="delivery__hint delivery__hint">Квартира</span>
-                      <input type="number" name="room" id="" class="delivery__space" />
+                      <input type="number" name="room" class="delivery__space" />
                     </label>
                   </li>
                   <li class="delivery__item delivery__item--four">
                     <label class="delivery__input delivery__input--four">
                       <span class="delivery__hint delivery__hint">Этаж</span>
-                      <input type="number" name="floor" id="" class="delivery__space" />
+                      <input type="number" name="floor" class="delivery__space" />
                     </label>
                   </li>
                 </ul>
@@ -645,7 +645,7 @@
                   <li class="delivery__item delivery__item--fluid">
                     <label class="delivery__input delivery__input">
                       <span class="delivery__hint delivery__hint">Комментарий</span>
-                      <textarea name="desc" id="" class="delivery__space delivery__space--area" cols="30" rows="10"
+                      <textarea name="desc" class="delivery__space delivery__space--area" cols="30" rows="10"
                         required></textarea>
                     </label>
                   </li>
@@ -653,13 +653,13 @@
                 <ul class="delivery__row delivery__row--mb">
                   <li class="delivery__item delivery__item--mb delivery__item--two">
                     <label class="delivery__radio">
-                      <input type="radio" name="delivery__radio" class="delivery__radio-button" checked id="" />
+                      <input type="radio" name="delivery__radio" class="delivery__radio-button" checked />
                       <span class="delivery__hint delivery__hint--radio">Потребуется сдача</span>
                     </label>
                   </li>
                   <li class="delivery__item delivery__item--mb delivery__item--two">
                     <label class="delivery__radio">
-                      <input type="radio" name="delivery__radio" class="delivery__radio-button" id="" />
+                      <input type="radio" name="delivery__radio" class="delivery__radio-button" />
                       <span class="delivery__hint delivery__hint--radio">Оплата картой</span>
                     </label>
                   </li>
@@ -667,7 +667,7 @@
                 <ul class="delivery__row delivery__row--mb">
                   <li class="delivery__item delivery__item--mb delivery__item--fluid">
                     <label class="delivery__check">
-                      <input type="checkbox" name="" id="" class="delivery__check-button" />
+                      <input type="checkbox" name="" class="delivery__check-button" />
                       <span class="delivery__hint delivery__hint--check">Не перезванивать</span>
                     </label>
                   </li>
@@ -699,28 +699,28 @@
             <ul class="social__list">
               <li class="social__item">
                 <a href="#" class="social__link">
-                  <svg class="social__icon" xmlns="https://www.w3.org/2000/svg" width="30" height="30">
+                  <svg class="social__icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
                     <use xlink:href="./icons/svg_sprite.svg#vk"></use>
                   </svg>
                 </a>
               </li>
               <li class="social__item">
                 <a href="#" class="social__link">
-                  <svg class="social__icon" xmlns="https://www.w3.org/2000/svg" width="30" height="30">
+                  <svg class="social__icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
                     <use xlink:href="./icons/svg_sprite.svg#fb"></use>
                   </svg>
                 </a>
               </li>
               <li class="social__item">
                 <a href="#" class="social__link">
-                  <svg class="social__icon" xmlns="https://www.w3.org/2000/svg" width="30" height="30">
+                  <svg class="social__icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
                     <use xlink:href="./icons/svg_sprite.svg#ins"></use>
                   </svg>
                 </a>
               </li>
               <li class="social__item">
                 <a href="#" class="social__link">
-                  <svg class="social__icon" xmlns="https://www.w3.org/2000/svg" width="30" height="30">
+                  <svg class="social__icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
                     <use xlink:href="./icons/svg_sprite.svg#tg"></use>
                   </svg>
                 </a>
@@ -733,15 +733,15 @@
 
     <div class="paginator">
       <ul class="paginator-list">
-        <li class="paginator-item paginator-item--active" to=".hero"></li>
-        <li class="paginator-item " to=".features"></li>
-        <li class="paginator-item" to=".product"></li>
-        <li class="paginator-item" to=".team"></li>
-        <li class="paginator-item" to=".colors"></li>
-        <li class="paginator-item" to=".review"></li>
-        <li class="paginator-item" to=".work"></li>
-        <li class="paginator-item" to=".delivery"></li>
-        <li class="paginator-item" to=".map-section"></li>
+        <li class="paginator-item paginator-item--active" data-to=".hero"></li>
+        <li class="paginator-item " data-to=".features"></li>
+        <li class="paginator-item" data-to=".product"></li>
+        <li class="paginator-item" data-to=".team"></li>
+        <li class="paginator-item" data-to=".colors"></li>
+        <li class="paginator-item" data-to=".review"></li>
+        <li class="paginator-item" data-to=".work"></li>
+        <li class="paginator-item" data-to=".delivery"></li>
+        <li class="paginator-item" data-to=".map-section"></li>
       </ul>
     </div>
   </div>
@@ -755,25 +755,25 @@
   <nav class="menu overlay__menu">
     <ul class="menu__list overlay__list">
       <li class="menu__item">
-        <a class="menu__link" to=".features">О нас</a>
+        <a class="menu__link" data-to=".features">О нас</a>
       </li>
       <li class="menu__item">
-        <a class="menu__link" to=".product">Наушники</a>
+        <a class="menu__link" data-to=".product">Наушники</a>
       </li>
       <li class="menu__item">
-        <a class="menu__link" to=".team">Команда</a>
+        <a class="menu__link" data-to=".team">Команда</a>
       </li>
       <li class="menu__item">
-        <a class="menu__link" to=".colors">Цвета</a>
+        <a class="menu__link" data-to=".colors">Цвета</a>
       </li>
       <li class="menu__item">
-        <a class="menu__link" to=".review">Отзывы</a>
+        <a class="menu__link" data-to=".review">Отзывы</a>
       </li>
       <li class="menu__item">
-        <a class="menu__link" to=".work">Как мы работаем</a>
+        <a class="menu__link" data-to=".work">Как мы работаем</a>
       </li>
       <li class="menu__item">
-        <a class="menu__link" to=".map-section">Контакты</a>
+        <a class="menu__link" data-to=".map-section">Контакты</a>
       </li>
     </ul>
   </nav>

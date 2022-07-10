@@ -6,16 +6,16 @@ let inScroll = false;
 section.first().addClass('active');
 
 $('.menu__link').on('click', function () {
-  scrollTo($(this).attr('to'));
+  scrollTo($(this).attr('data-to'));
 });
 
 $('.paginator-item').on('click', function () {
-  scrollTo($(this).attr('to'));
+  scrollTo($(this).attr('data-to'));
 });
 
 function scrollTo(className) {
   clearClass('paginator-item--active');
-  $('.paginator-item').filter((ind, el) => $(el).attr('to') === className).addClass('paginator-item--active');
+  $('.paginator-item').filter((ind, el) => $(el).attr('data-to') === className).addClass('paginator-item--active');
   performTransition(section.filter(className).index());
   if (!section.first().hasClass('active')) {
     $('.header').addClass('dn');
@@ -80,7 +80,7 @@ const md = new MobileDetect(window.navigator.userAgent);
 const isMobile = md.mobile() || md.tablet();
 
 if (isMobile) {
-  $(".wrapper-content").swipe({
+  $(".wrapper").swipe({
     swipe: function (event, direction) {
       if (direction == 'up')
         scrollDirection('next');
