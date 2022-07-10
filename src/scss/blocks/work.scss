@@ -103,9 +103,12 @@
 @include adaptive($mob) {
   .player {
     max-width: 394px;
+    &__playback {
+      width: 50%;
+    }
     &__volume {
       &-icon {
-        margin-right: 0;
+        margin-right: 5px;
       }
     }
   }
