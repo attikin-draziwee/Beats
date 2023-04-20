@@ -60,9 +60,6 @@
     user-select: none;
     font-family: Play;
     margin-bottom: pxToRem(6px);
-    &--shadow {
-      text-shadow: 0 pxToRem(4px) 0px $accent-color;
-    }
     &--radio {
       position: relative;
       display: inline-block;

@@ -27,6 +27,7 @@ function scrollTo(className) {
 
 const performTransition = sectionInd => {
   if (!inScroll) {
+    
     inScroll = true;
     const sectionHeight = $('.wrapper-content').height() / section.length;
     const position = (sectionHeight * 100 / $('.wrapper-content').height()) * -sectionInd;
@@ -36,7 +37,7 @@ const performTransition = sectionInd => {
     section.eq(sectionInd).addClass('active').siblings().removeClass('active');
     setTimeout(e => {
       inScroll = false;
-    }, 300);
+    }, 650);
   }
 };
 
